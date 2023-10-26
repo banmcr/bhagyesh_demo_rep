@@ -41,5 +41,13 @@ jobs:
         env:
           DEPLOY_ENV: ${{ env.DEPLOY_ENV }}
         run: |
-          echo Add other actions to build.
-          echo $VAR1
+          # You can now use $DEPLOY_ENV in your deployment steps
+          if [ "$DEPLOY_ENV" == "Sandbox" ]; then
+            # Print the value of VAR1 for the Sandbox environment
+            echo "VAR1 in Sandbox: $VAR1"
+          elif [ "$DEPLOY_ENV" == "Quality" ]; then
+            # Print the value of VAR1 for the Quality environment
+            echo "VAR1 in Quality: $VAR1"
+          else
+            # Handle other cases
+          fi
