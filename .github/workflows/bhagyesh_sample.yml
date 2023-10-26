@@ -39,4 +39,4 @@ jobs:
         run: echo ${{ secrets.SECRET1 }}
         
       - name: Run a 3-line script
-        run: echo ${{ env.VAR1 }}
+        run: echo ${{ vars.VAR1 }}
