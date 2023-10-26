@@ -32,8 +32,11 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, world!. ${{ env.VAR1 }}
+        run: echo Hello, world!.
 
       # Runs a set of commands using the runners shell
       - name: Run a 2-line script
         run: echo ${{ secrets.SECRET1 }}
+        
+      - name: Run a 3-line script
+        run: echo ${{ env.VAR1 }}
