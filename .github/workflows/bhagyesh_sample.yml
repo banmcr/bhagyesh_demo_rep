@@ -41,4 +41,4 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo Add other actions to build.
-          echo ${{variables.VAR1}}
+          echo ${{env.VAR1}}
