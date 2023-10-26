@@ -41,6 +41,6 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo Add other actions to build.
-          echo ${{secret.SECRET1}}
-          echo ${{secret.SECRET2}}
-          echo ${{secret.SECRET3}}
+          echo ${{secrets.SECRET1}}
+          echo ${{secrets.SECRET2}}
+          echo ${{secrets.SECRET3}}
