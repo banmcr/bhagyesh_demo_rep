@@ -50,4 +50,5 @@ jobs:
             echo "VAR1 in Quality: $VAR1"
           else
             # Handle other cases
+            echo "Unknown environment: $DEPLOY_ENV"
           fi
