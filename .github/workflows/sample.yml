@@ -1,0 +1,24 @@
+name: Code Push Trigger
+
+on:
+  push:
+    branches:
+      - main
+      - sandbox
+      - quality
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: ${{ github.ref }}
+    env:
+      BRANCH_NAME: ${{ github.ref }}
+
+    steps:
+
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, ${{ github.ref }} world!.    
