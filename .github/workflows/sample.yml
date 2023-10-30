@@ -12,17 +12,14 @@ jobs:
     runs-on: ubuntu-latest
     environment: $BRANCH_NAME
     env:
-      BRANCH_NAME: ${{ steps.extract_branch.outputs.branch_name }}
+      BRANCH_NAME: ${{ github.event.ref }}
 
     steps:
       - name: Checkout code
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
         uses: actions/checkout@v3
 
-      - name: Extract branch name
-        id: extract_branch
-        run: echo "::set-output name=branch_name::$(basename $GITHUB_REF)"
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, ${{ github.ref }} world!.    
+        run: echo Hello, ${{ github.event.ref }}world!.    
