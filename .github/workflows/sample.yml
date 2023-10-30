@@ -15,9 +15,9 @@ jobs:
       BRANCH_NAME: ${{ steps.extract_branch.outputs.branch_name }}
 
     steps:
-
+      - name: Checkout code
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
 
       - name: Extract branch name
         id: extract_branch
