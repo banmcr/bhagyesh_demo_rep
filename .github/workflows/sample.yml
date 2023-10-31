@@ -21,5 +21,11 @@ jobs:
 
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, ${{ github.ref_name }} world!.    
+      - name: Run a 1st script
+        run: echo Hello, ${{ github.ref_name }} world!. 
+
+      - name: Run a 2nd script
+        run: echo ${{ secrets.SECRET1 }}
+        
+      - name: Run a 3rd script
+        run: echo ${{ vars.VAR1 }}   
